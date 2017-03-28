@@ -6,7 +6,7 @@ Convert [OpenCorpora](http://opencorpora.org "OpenCorpora") dictionary to [OntoL
 Конвертирует словарь [OpenCorpora](http://opencorpora.org "OpenCorpora") в формат онтологии [OntoLex](https://www.w3.org/community/ontolex/wiki/Final_Model_Specification#Linguistic_Description "OntoLex")
 
 `  
-  npm install
+  npm install  
   node app [options]
 `  
 
