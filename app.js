@@ -106,6 +106,7 @@ let turle,
     lemmaWrittenRep, 
     lemmaProps, 
     forms,
+    formsComment,
     formWrittenRep,
     formProps,
     formId,
@@ -181,17 +182,17 @@ function convert(line, output) {
             lemmaProps = '';
             let l = result.lemma.l[0].g.length;
             result.lemma.l[0].g.forEach( (prop, i) => {
-                if (i+1 == l) lineEnd = ' .';
-                else lineEnd = ' ;';
+                if (i+1 == l) lineEnd = '';
+                else lineEnd = ' ;' + newLineIndent;
                 tag = convertTag(prop['$'].v);
-                if (tag) lemmaProps += tag + lineEnd + newLineIndent;
+                if (tag) lemmaProps += tag + lineEnd;
             })
             lemmaId = `${id}:lemma`;
             lemma = `# ${id} ${lemmaWrittenRep} Lemma` +
                     '\n' +
                     `${lemmaId}` +
-                    `${newLineIndent}ontolex:writtenRep "${lemmaWrittenRep}"@ru` +
-                    `${newLineIndent}${lemmaProps}`
+                    `${newLineIndent}ontolex:writtenRep "${lemmaWrittenRep}"@ru ;` +
+                    `${newLineIndent}${lemmaProps} .`
 
             // Forms
             // :1_yozh:form1_yozh
@@ -201,7 +202,8 @@ function convert(line, output) {
             //     lexinfo:case lexinfo:nominativeCase .
             // # forms in Word
             // ontolex:otherForm :1_yozh:form1_yozh , :1_yozh:form2_ezha ;
-            forms = `# ${id} ${lemmaWrittenRep} Forms`;
+            formsComment = `# ${id} ${lemmaWrittenRep} Forms`;
+            forms = '';
             formIdsList = '';
             let formsCount = result.lemma.f.length;
             result.lemma.f.forEach( (form, i) => {
@@ -210,35 +212,45 @@ function convert(line, output) {
                     formProps = '';
                     l = form.g.length;
                     form.g.forEach( (prop, j) => {
-                        if (j+1 == l) lineEnd = ' .';
-                        else lineEnd = ' ;';
+                        if (j+1 == l) lineEnd = '';
+                        else lineEnd = ' ;' + newLineIndent;
                         tag = convertTag(prop['$'].v);
                         if (tag) {
-                            formProps += tag + lineEnd + newLineIndent;
+                            formProps += tag + lineEnd;
                         }
                     })
                     formId = id + ':form' + (i+1) + "_" + transliterate(formWrittenRep);
-                    if (i+1 == formsCount)  lineEnd = ' .';
-                    else lineEnd = ', '
-                    formIdsList += formId + lineEnd + newLineIndent + indent + indent+ indent + indent + indent;
+                    if (i+1 == formsCount)  lineEnd = '';
+                    else lineEnd = ', ' + newLineIndent + indent + indent+ indent + indent + indent;
+                    formIdsList += formId + lineEnd;
                     forms += '\n' +
                             `${formId}` +
-                            `${newLineIndent}ontolex:writtenRep "${formWrittenRep}"@ru` + 
-                            `${newLineIndent}${formProps}`;
+                            `${newLineIndent}ontolex:writtenRep "${formWrittenRep}"@ru ;` + 
+                            `${newLineIndent}${formProps} .` +
+                            '\n';
                 }
             })
-            // Word
-            // :1_yozh a ontolex:Word ;
-            //      # Lemma
-            //     ontolex:canonicalForm :1_yozh_lemma ;
-            //      # Forms
-            //     ontolex:otherForm :1_yozh:form1_yozh , :1_yozh:form2_ezha .
+            if (forms != '') {
+                // Word
+                // :1_yozh a ontolex:Word ;
+                //      # Lemma
+                //     ontolex:canonicalForm :1_yozh_lemma ;
+                //      # Forms
+                //     ontolex:otherForm :1_yozh:form1_yozh , :1_yozh:form2_ezha .
+                forms = formsComment + forms;
+                word = `# ${id} ${lemmaWrittenRep}` +
+                    '\n' +
+                    `${id} a ontolex:Word ;` +
+                    `${newLineIndent}ontolex:canonicalForm ${lemmaId} ;` +
+                    `${newLineIndent}ontolex:otherForm ${formIdsList} .`;
+                
+            } else {
+                word = `# ${id} ${lemmaWrittenRep}` +
+                    '\n' +
+                    `${id} a ontolex:Word ;` +
+                    `${newLineIndent}ontolex:canonicalForm ${lemmaId} .`;
+            }
             
-            word = `# ${id} ${lemmaWrittenRep}` +
-                '\n' +
-                `${id} a ontolex:Word ;` +
-                `${newLineIndent}ontolex:canonicalForm ${lemmaId} ;` +
-                `${newLineIndent}ontolex:otherForm ${formIdsList}`;
             
             turtle = '\n' + word + '\n' +lemma + '\n' + forms;
             fs.appendFileSync(output, turtle);
