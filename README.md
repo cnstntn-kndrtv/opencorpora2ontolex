@@ -1,14 +1,14 @@
-# opencorpora2ontolex
+# OpenCorpora 🖤 OntoLex
 Part of [OntoRuGrammaForm](https://github.com/cnstntn-kndrtv/OntoRuGrammaForm "OntoRuGrammaForm") project.  
-Convert OpenCorpora dictionary to [OntoLex](https://www.w3.org/community/ontolex/wiki/Final_Model_Specification#Linguistic_Description "OntoLex")
+Convert [OpenCorpora](http://opencorpora.org "OpenCorpora") dictionary to [OntoLex](https://www.w3.org/community/ontolex/wiki/Final_Model_Specification#Linguistic_Description "OntoLex")
 
 Является частью проекта [OntoRuGrammaForm](https://github.com/cnstntn-kndrtv/OntoRuGrammaForm "OntoRuGrammaForm")  
-Конвертирует словарь OpenCorpora в формат онтологии [OntoLex](https://www.w3.org/community/ontolex/wiki/Final_Model_Specification#Linguistic_Description "OntoLex")
+Конвертирует словарь [OpenCorpora](http://opencorpora.org "OpenCorpora") в формат онтологии [OntoLex](https://www.w3.org/community/ontolex/wiki/Final_Model_Specification#Linguistic_Description "OntoLex")
 
-`
+`  
   npm install
   node app [options]
-`
+`  
 
   Options:
 
