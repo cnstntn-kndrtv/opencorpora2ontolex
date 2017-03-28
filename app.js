@@ -14,6 +14,7 @@ program
     .option('-p, --preface [preface]', 'ontology preface file *.ttl  (default "./preface.ttl")', 'preface.ttl')
     .option('-o, --output [output]', 'output ontology file *.ttl  (default "./export.ttl")', 'export.ttl')
     .option('-m, --map [map]', 'tag mapping config file *.json  (default "./tag-mapping.json")', 'tag-mapping.json')
+    .option('-l, --limit [limit]', 'limit to parse words from openCorpora (default - 0/all)', 'all')
     .parse(process.argv);
 
 
@@ -22,7 +23,8 @@ console.log(
 input file: '${program.input}',
 output file: '${program.output}',
 turtle preface file: '${program.preface}',
-tag mapping config file: '${program.map}'
+tag mapping config file: '${program.map}',
+parse words limit: '${program.limit}',
 let's go...\n`);
 
 let tagMap;
@@ -94,6 +96,7 @@ function convertTag(ocTag) {
     else return false;
 }
 
+let limit = (program.limit == 0 || program.limit == 'all') ? 'all' : program.limit;
 
 let turle,
     id, 
@@ -154,7 +157,7 @@ function analyse(line, output) {
 
             if (formPOS != '') console.log(id, lemmaPOS, formPOS)
             spinner();
-            // if (counter == 4) return process.exit(0);
+            if (counter == limit) return process.exit(0);
         }
     })
 }
@@ -240,6 +243,7 @@ function convert(line, output) {
             turtle = '\n' + word + '\n' +lemma + '\n' + forms;
             fs.appendFileSync(output, turtle);
             spinner();
+            if (counter == limit) return process.exit(0);
         }
     })
 }    
