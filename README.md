@@ -7,7 +7,7 @@ Convert [OpenCorpora](http://opencorpora.org "OpenCorpora") dictionary to [OntoL
 
 `  
   npm install  
-  node app [options]
+  node app [options]  
 `  
 
   Options:
