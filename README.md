@@ -5,11 +5,11 @@ Convert [OpenCorpora](http://opencorpora.org "OpenCorpora") dictionary to [OntoL
 Является частью проекта [OntoRuGrammaForm](https://github.com/cnstntn-kndrtv/OntoRuGrammaForm "OntoRuGrammaForm")  
 Конвертирует словарь [OpenCorpora](http://opencorpora.org "OpenCorpora") в формат онтологии [OntoLex](https://www.w3.org/community/ontolex/wiki/Final_Model_Specification#Linguistic_Description "OntoLex")
 
-###Install  
+### Install  
 
     npm install  
 
-###Run converter  
+### Run converter  
 
     node app [options]  
 
@@ -23,7 +23,7 @@ Convert [OpenCorpora](http://opencorpora.org "OpenCorpora") dictionary to [OntoL
     -m, --map [map]          tag mapping config file *.json  (default "./tag-mapping.json")
     -l, --limit [limit]      limit of words to parse from openCorpora (default - 0/all)
 
-###Check exported turtle file  
+### Check exported turtle file  
 
     node checkTurtle [options]  
 
