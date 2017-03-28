@@ -14,7 +14,7 @@ program
     .option('-p, --preface [preface]', 'ontology preface file *.ttl  (default "./preface.ttl")', 'preface.ttl')
     .option('-o, --output [output]', 'output ontology file *.ttl  (default "./export.ttl")', 'export.ttl')
     .option('-m, --map [map]', 'tag mapping config file *.json  (default "./tag-mapping.json")', 'tag-mapping.json')
-    .option('-l, --limit [limit]', 'limit to parse words from openCorpora (default - 0/all)', 'all')
+    .option('-l, --limit [limit]', 'limit of words to parse from openCorpora (default - 0/all)', 'all')
     .parse(process.argv);
 
 
