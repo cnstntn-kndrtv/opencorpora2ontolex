@@ -1,0 +1,17 @@
+{
+    "name": "opencorpora",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Constantin Kondratyev",
+    "license": "ISC",
+    "dependencies": {
+        "commander": "^2.9.0",
+        "transliteration": "^1.5.3",
+        "xml2js": "^0.4.17"
+    }
+}

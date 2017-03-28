@@ -1,0 +1,23 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix : <http://kloud.one/ontorugrammaform#> .
+@base <http://kloud.one/ontorugrammaform> .
+
+# Author: Constantin Kondratev
+# Created: 23.03.2017
+# Description: Morphosyntactic properties of russian words
+
+<http://kloud.one/russaffonto> a owl:Ontology ;
+                                owl:versionIRI <http://kloud.one/russaffonto/1.0.0> ;
+                                dc:date "23-03-2017" ;
+                                rdfs:label "OntoRuGrammaForm"@en ;
+                                rdfs:title "Онтологический словарь грамматических форм русского языка"@ru ,
+                                            "Ontology-based dictionary of russian grammatical forms"@en .
+                                            
+
+# Individuals
+
