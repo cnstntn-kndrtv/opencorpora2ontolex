@@ -10,8 +10,6 @@ Convert [OpenCorpora](http://opencorpora.org "OpenCorpora") dictionary to [OntoL
 
   Options:
 
-  Options:
-
     -h, --help               output usage information
     -V, --version            output the version number
     -i, --input [input]      OpenCorpora file input *.xml (default "./dict.opcorpora.xml")
