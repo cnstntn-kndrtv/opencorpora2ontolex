@@ -7,11 +7,15 @@ Convert [OpenCorpora](http://opencorpora.org "OpenCorpora") dictionary to [OntoL
 
 ### Install  
 
-    npm install  
+```
+npm install  
+```
 
 ### Run converter  
 
-    node app [options]  
+```
+node app [options]  
+```
 
   Options:
 
@@ -32,3 +36,21 @@ Convert [OpenCorpora](http://opencorpora.org "OpenCorpora") dictionary to [OntoL
     -h, --help           output usage information
     -V, --version        output the version number
     -i, --input [input]  Turtle file *.ttl (default "./export.ttl")
+
+
+### Convert RDF to HDT
+
+Use [hdt-docker](https://github.com/rdfhdt/hdt-docker "hdt-docker")
+
+help  
+```
+docker run -it --rm rfdhdt/hdt-cpp rdf2hdt -h
+```
+
+convert  
+```
+docker run -it --rm -v "$(pwd)":/data rfdhdt/hdt-cpp rdf2hdt -f turtle data/export.ttl data/export.hdt
+```
+
+
+

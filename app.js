@@ -11,9 +11,9 @@ let parser = new xml2js.Parser(xml2js.defaults["0.2"]);
 program
     .version('0.0.1')
     .option('-i, --input [input]', 'OpenCorpora file input *.xml (default "./dict.opcorpora.xml")', 'dict.opcorpora.xml')
-    .option('-p, --preface [preface]', 'ontology preface file *.ttl  (default "./preface.ttl")', 'preface.ttl')
+    .option('-p, --preface [preface]', 'ontology preface file *.ttl  (default "./preface.ttl")', './config/preface.ttl')
     .option('-o, --output [output]', 'output ontology file *.ttl  (default "./export.ttl")', 'export.ttl')
-    .option('-m, --map [map]', 'tag mapping config file *.json  (default "./tag-mapping.json")', 'tag-mapping.json')
+    .option('-m, --map [map]', 'tag mapping config file *.json  (default "./tag-mapping.json")', './config/tag-mapping.json')
     .option('-l, --limit [limit]', 'limit of words to parse from openCorpora (default - 0/all)', 'all')
     .parse(process.argv);
 

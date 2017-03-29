@@ -1,5 +1,6 @@
 #
-export.ttl
+export.*
+test.*
 
 # Logs
 logs
