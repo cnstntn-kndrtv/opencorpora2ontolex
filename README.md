@@ -27,7 +27,7 @@ node app [options]
     -m, --map [map]          tag mapping config file *.json  (default "./tag-mapping.json")
     -l, --limit [limit]      limit of words to parse from openCorpora (default - 0/all)
 
-### Check exported turtle file  
+### Check errors in exported turtle file  
 
     node checkTurtle [options]  
 
