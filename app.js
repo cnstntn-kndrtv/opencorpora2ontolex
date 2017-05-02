@@ -61,6 +61,8 @@ function createExportFile(preface, output) {
     })
 }
 
+let inStream, outStream, rl;
+
 readTagMap(program.map)
     .then( msg => {
         console.log(msg);
@@ -259,8 +261,6 @@ function convert(line, output) {
         }
     })
 }    
-
-let inStream, outStream, rl;
 
 let counter = 0;
 let spinChars = ['🚦', '🚥']
