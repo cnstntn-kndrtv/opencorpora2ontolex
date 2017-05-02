@@ -1,24 +1,24 @@
 {
-    "name": "opencorpora2ontolex",
-    "version": "1.0.0",
-    "description": "convert OpenCorpora dictionary to OntoLex",
-    "main": "app.js",
-    "scripts": {
-        "help": "node app --help",
-        "check": "node checkTurtle",
-        "start": "node app",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/cnstntn-kndrtv/opencorpora2ontolex.git"
-    },
-    "author": "Constantin Kondratyev",
-    "license": "UNLICENSED",
-    "dependencies": {
-        "commander": "^2.9.0",
-        "n3": "^0.9.1",
-        "transliteration": "^1.5.3",
-        "xml2js": "^0.4.17"
-    }
+  "name": "opencorpora2ontolex",
+  "version": "1.0.0",
+  "description": "convert OpenCorpora dictionary to OntoLex",
+  "main": "app.js",
+  "scripts": {
+    "help": "node app --help",
+    "check": "node checkTurtle",
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnstntn-kndrtv/opencorpora2ontolex.git"
+  },
+  "author": "Constantin Kondratyev",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "n3": "^0.9.1",
+    "transliteration": "^1.5.3",
+    "xml2js": "^0.4.17"
+  }
 }

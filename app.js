@@ -1,7 +1,7 @@
 let fs = require('fs'),
     readline = require('readline'),
     Stream = require('stream'),
-    xml2js = require('xml2js'), // TODO did you use me?
+    xml2js = require('xml2js'),
     transliterate = require('transliteration').slugify,
     program = require('commander');
 
