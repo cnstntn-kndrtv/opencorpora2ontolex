@@ -37,20 +37,24 @@ node app [options]
     -V, --version        output the version number
     -i, --input [input]  Turtle file *.ttl (default "./export.ttl")
 
+  
+check with rapper  
+```
+docker run -it --rm -v "$(pwd)":/srv cnstntn/sem2ls rapper -c -i turtle /srv/export.ttl
+```
 
 ### Convert RDF to HDT
 
-Use [hdt-docker](https://github.com/rdfhdt/hdt-docker "hdt-docker")
+Use [semantic-tools-docker](https://github.com/cnstntn-kndrtv/semantic-tools-docker "sem2ls")
 
 help  
 ```
-docker run -it --rm rfdhdt/hdt-cpp rdf2hdt -h
+docker run -it --rm cnstntn/sem2ls rdf2hdt -h
 ```
 
 convert  
 ```
-docker run -it --rm -v "$(pwd)":/data rfdhdt/hdt-cpp rdf2hdt -f turtle data/export.ttl data/export.hdt
+docker run -it --rm -v "$(pwd)":/srv cnstntn/sem2ls rdf2hdt -f turtle srv/export.ttl srv/export.hdt
 ```
-
 
 

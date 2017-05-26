@@ -18,7 +18,5 @@
                                 rdfs:label "OntoRuGrammaForm"@en ;
                                 rdfs:title "Онтологический словарь грамматических форм русского языка"@ru ,
                                             "Ontology-based dictionary of russian grammatical forms"@en .
-                                            
 
 # Individuals
-

@@ -63,6 +63,7 @@ function createExportFile(preface, output) {
 
 let inStream, outStream, rl;
 
+
 readTagMap(program.map)
     .then( msg => {
         console.log(msg);
@@ -70,11 +71,15 @@ readTagMap(program.map)
     })
     .then( msg => {
         console.log(msg);
+        return loadIpaResults(200);
+    })
+    .then( msg => {
+        console.log(msg);
         createReadStream(program.input);
         parseAndSave(program.output);
-        // readAndAnalyse(program.output);
     })
     .catch(e => console.log('ERROR!', e));
+
 
 function createReadStream(fileName) {
     inStream = fs.createReadStream(fileName);
@@ -86,12 +91,6 @@ function parseAndSave(output) {
     rl.on('line', line => convert(line, output));
     rl.on('close', () => console.log('all done 🤘') );
 }
-
-function readAndAnalyse(output) {
-    rl.on('line', line => analyse(line, output));
-    rl.on('close', () => console.log('all done 🤘') );
-}
-    
 
 function convertTag(ocTag) {
     if (tagMap.hasOwnProperty(ocTag)) return tagMap[ocTag];
@@ -105,12 +104,14 @@ let turle,
     word, 
     lemma,
     lemmaId,
-    lemmaWrittenRep, 
+    lemmaWrittenRep,
+    lemmaPhoneticRep,
     lemmaProps, 
     forms,
     formStr,
     formsComment,
     formWrittenRep,
+    formPhoneticRep,
     formProps,
     formId,
     formIdsList,
@@ -120,58 +121,11 @@ let turle,
     newLineIndent = '\n' + indent;
 
     
-function analyse(line, output) {
-    console.log('!!!!!!!!!!!!!!!!!!!!!!')
-    // if (tag == tag.toUpperCase())
-    // взять из леммы тег написанный большими буквами. это ПОС
-    // есть ли в формах слова теги написанные большими буквами?
-    // если есть - сохранить в файл отчет. количество и список - id , тег1 тег2
-    parser.parseString(line, (err, result) => {
-        if (!err && result && result.hasOwnProperty('lemma')) {
-            lemmaWrittenRep = result.lemma.l[0]['$'].t.toLowerCase();
-        
-            // :1_yozh:lemma
-            id = result.lemma['$'].id;
-            id = ':' + id + '_' + transliterate(lemmaWrittenRep);
-            
-            let lemmaPOS = ''
-
-            lemmaProps = '';
-            let l = result.lemma.l[0].g.length;
-            result.lemma.l[0].g.forEach( (prop, i) => {
-                prop = prop['$'].v;
-                if (prop == prop.toUpperCase()) lemmaPOS = prop;
-            })
-
-            let formPOS = '';
-            forms = `# ${id} ${lemmaWrittenRep} Forms`;
-            
-            formIdsList = '';
-            let formsCount = result.lemma.f.length;
-            result.lemma.f.forEach( (form, i) => {
-                if (form.hasOwnProperty('g')) {
-                    formWrittenRep = form['$'].t;
-                    let formPOS = '';
-                    l = form.g.length;
-                    form.g.forEach( (prop, j) => {
-                        prop = prop['$'].v;
-                        if (prop == prop.toUpperCase()) formPOS += prop + ' ' + formWrittenRep + '\n';
-                    })
-                }
-            })
-
-            if (formPOS != '') console.log(id, lemmaPOS, formPOS)
-            spinner();
-            if (counter == limit) return process.exit(0);
-        }
-    })
-}
-
 function convert(line, output) {
     parser.parseString(line, (err, result) => {
         if (!err && result && result.hasOwnProperty('lemma')) {
             lemmaWrittenRep = result.lemma.l[0]['$'].t.toLowerCase();
-            
+            lemmaPhoneticRep = (ipas.has(lemmaWrittenRep)) ? `${newLineIndent}ontolex:phoneticRep "${ipas.get(lemmaWrittenRep)}"@ru-fonipa ;` : '';
             // :1_yozh:lemma
             id = result.lemma['$'].id;
             id = ':' + id + '_' + transliterate(lemmaWrittenRep);
@@ -196,6 +150,7 @@ function convert(line, output) {
                     '\n' +
                     `${lemmaId}` +
                     `${newLineIndent}ontolex:writtenRep "${lemmaWrittenRep}"@ru ;` +
+                    lemmaPhoneticRep +
                     `${newLineIndent}${lemmaProps} .`
 
             // Forms
@@ -214,6 +169,7 @@ function convert(line, output) {
 
             result.lemma.f.forEach( (form, i) => {
                 formWrittenRep = form['$'].t;
+                formPhoneticRep = (ipas.has(formWrittenRep)) ? `${newLineIndent}ontolex:phoneticRep "${ipas.get(formWrittenRep)}"@ru-fonipa ;` : '';
                 formProps = '';
                 if (form.hasOwnProperty('g')) {
                     l = form.g.length;
@@ -235,6 +191,7 @@ function convert(line, output) {
                 
                 formStr = '\n' +
                         `${formId}` +
+                        formPhoneticRep +
                         `${newLineIndent}ontolex:writtenRep "${formWrittenRep}"@ru `;
                 if (formProps.length != 0) formStr += `; ${newLineIndent}${formProps} .\n`;
                 else formStr += '.';
@@ -271,6 +228,32 @@ function convert(line, output) {
         }
     })
 }    
+
+var ipas = new Map();
+function loadIpaResults(n = 200) {
+    let resultsPath = './results';
+    return new Promise((resolve, reject) => {
+        let files = fs.readdirSync(resultsPath);
+        let resultsFileNames = files.filter((f) => {
+            return f.includes('result');
+        });
+        console.log('num of results files:', resultsFileNames.length);
+        let wordsCount = 0;
+        resultsFileNames.forEach( (fileName) => {
+            let data = fs.readFileSync(resultsPath + '/' + fileName);
+            data = data.toString();
+            wordsCount += data.split('\n').length - 1;
+            data = '{' + data.substr(0, data.length - 2) + '}';
+            data = JSON.parse(data);
+            for (key in data) {
+                if (data.hasOwnProperty(key)) {
+                    ipas.set(key, data[key]);
+                }
+            }
+        });
+        resolve(`load ipas ok. num of uniqe ipas - ${ipas.size}, num of words - ${wordsCount}`);
+    })
+}
 
 let counter = 0;
 let spinChars = ['🚦', '🚥']

@@ -8,7 +8,7 @@
     "INFN" :	"lexinfo:verbFormMood lexinfo:infinitive",
     "INFN" :	"lexinfo:partOfSpeech lexinfo:verb",
     "PRTF" :	"lexinfo:partOfSpeech lexinfo:participle",
-    "PRTS" :	"lexinfo:partOfSpeech lexinfo:shorParticiple",
+    "PRTS" :	"lexinfo:partOfSpeech lexinfo:shortParticiple",
     "GRND" :	"lexinfo:partOfSpeech lexinfo:gerund",
     "NUMR" :	"lexinfo:partOfSpeech lexinfo:numeral",
     "ADVB" :	"lexinfo:partOfSpeech lexinfo:adverb",
