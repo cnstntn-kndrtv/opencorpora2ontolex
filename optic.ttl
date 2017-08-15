@@ -1,0 +1,200 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix : <http://kloud.one/ontorugrammaform#> .
+@base <http://kloud.one/ontorugrammaform> .
+
+# Author: Constantin Kondratev
+# Created: 23.03.2017
+# Description: Morphosyntactic properties of russian words
+
+<http://kloud.one/russaffonto> a owl:Ontology ;
+                                owl:versionIRI <http://kloud.one/russaffonto/1.0.0> ;
+                                dc:date "23-03-2017" ;
+                                rdfs:label "OntoRuGrammaForm"@en ;
+                                rdfs:title "Онтологический словарь грамматических форм русского языка"@ru ,
+                                            "Ontology-based dictionary of russian grammatical forms"@en .
+
+# Individuals
+
+# :208278_optik оптик
+:208278_optik a ontolex:Word ;
+    ontolex:canonicalForm :208278_optik:lemma ;
+    ontolex:otherForm :208278_optik:form1_optik, 
+                        :208278_optik:form2_optika, 
+                        :208278_optik:form3_optiku, 
+                        :208278_optik:form4_optika, 
+                        :208278_optik:form5_optikom, 
+                        :208278_optik:form6_optike, 
+                        :208278_optik:form7_optiki, 
+                        :208278_optik:form8_optikov, 
+                        :208278_optik:form9_optikam, 
+                        :208278_optik:form10_optikov, 
+                        :208278_optik:form11_optikami, 
+                        :208278_optik:form12_optikah .
+# :208278_optik оптик Lemma
+:208278_optik:lemma
+    ontolex:writtenRep "оптик"@ru ;
+    ontolex:phoneticRep "ˈoptʲɪk"@ru-fonipa ;
+    lexinfo:partOfSpeech lexinfo:noun ;
+    lexinfo:animacy lexinfo:animate ;
+    lexinfo:gender lexinfo:masculine .
+# :208278_optik оптик Forms
+:208278_optik:form1_optik
+    ontolex:phoneticRep "ˈoptʲɪk"@ru-fonipa ;
+    ontolex:writtenRep "оптик"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:nominativeCase .
+
+:208278_optik:form2_optika
+    ontolex:phoneticRep "ˈoptʲɪkə"@ru-fonipa ;
+    ontolex:writtenRep "оптика"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:genitiveCase .
+
+:208278_optik:form3_optiku
+    ontolex:writtenRep "оптику"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:dativeCase .
+
+:208278_optik:form4_optika
+    ontolex:phoneticRep "ˈoptʲɪkə"@ru-fonipa ;
+    ontolex:writtenRep "оптика"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:accusativeCase .
+
+:208278_optik:form5_optikom
+    ontolex:writtenRep "оптиком"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:instrumentalCase .
+
+:208278_optik:form6_optike
+    ontolex:writtenRep "оптике"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:locativeCase .
+
+:208278_optik:form7_optiki
+    ontolex:writtenRep "оптики"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:nominativeCase .
+
+:208278_optik:form8_optikov
+    ontolex:writtenRep "оптиков"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:genitiveCase .
+
+:208278_optik:form9_optikam
+    ontolex:writtenRep "оптикам"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:dativeCase .
+
+:208278_optik:form10_optikov
+    ontolex:writtenRep "оптиков"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:accusativeCase .
+
+:208278_optik:form11_optikami
+    ontolex:writtenRep "оптиками"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:instrumentalCase .
+
+:208278_optik:form12_optikah
+    ontolex:writtenRep "оптиках"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:locativeCase .
+
+# :208279_optika оптика
+:208279_optika a ontolex:Word ;
+    ontolex:canonicalForm :208279_optika:lemma ;
+    ontolex:otherForm :208279_optika:form1_optika, 
+                        :208279_optika:form2_optiki, 
+                        :208279_optika:form3_optike, 
+                        :208279_optika:form4_optiku, 
+                        :208279_optika:form5_optikoy, 
+                        :208279_optika:form6_optikoyu, 
+                        :208279_optika:form7_optike, 
+                        :208279_optika:form8_optiki, 
+                        :208279_optika:form9_optik, 
+                        :208279_optika:form10_optikam, 
+                        :208279_optika:form11_optiki, 
+                        :208279_optika:form12_optikami, 
+                        :208279_optika:form13_optikah .
+# :208279_optika оптика Lemma
+:208279_optika:lemma
+    ontolex:writtenRep "оптика"@ru ;
+    ontolex:phoneticRep "ˈoptʲɪkə"@ru-fonipa ;
+    lexinfo:partOfSpeech lexinfo:noun ;
+    lexinfo:animacy lexinfo:inanimate ;
+    lexinfo:gender lexinfo:feminine .
+# :208279_optika оптика Forms
+:208279_optika:form1_optika
+    ontolex:phoneticRep "ˈoptʲɪkə"@ru-fonipa ;
+    ontolex:writtenRep "оптика"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:nominativeCase .
+
+:208279_optika:form2_optiki
+    ontolex:writtenRep "оптики"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:genitiveCase .
+
+:208279_optika:form3_optike
+    ontolex:writtenRep "оптике"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:dativeCase .
+
+:208279_optika:form4_optiku
+    ontolex:writtenRep "оптику"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:accusativeCase .
+
+:208279_optika:form5_optikoy
+    ontolex:writtenRep "оптикой"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:instrumentalCase .
+
+:208279_optika:form6_optikoyu
+    ontolex:writtenRep "оптикою"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:instrumentalCase ;
+     .
+
+:208279_optika:form7_optike
+    ontolex:writtenRep "оптике"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:locativeCase .
+
+:208279_optika:form8_optiki
+    ontolex:writtenRep "оптики"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:nominativeCase .
+
+:208279_optika:form9_optik
+    ontolex:phoneticRep "ˈoptʲɪk"@ru-fonipa ;
+    ontolex:writtenRep "оптик"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:genitiveCase .
+
+:208279_optika:form10_optikam
+    ontolex:writtenRep "оптикам"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:dativeCase .
+
+:208279_optika:form11_optiki
+    ontolex:writtenRep "оптики"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:accusativeCase .
+
+:208279_optika:form12_optikami
+    ontolex:writtenRep "оптиками"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:instrumentalCase .
+
+:208279_optika:form13_optikah
+    ontolex:writtenRep "оптиках"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:locativeCase .

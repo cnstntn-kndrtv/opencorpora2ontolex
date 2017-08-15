@@ -1,0 +1,6 @@
+<xml>
+    <lemmata>
+        <lemma id="1" rev="1"><l t="ёж"><g v="NOUN"/><g v="anim"/><g v="masc"/></l><f t="ёж"><g v="sing"/><g v="nomn"/></f><f t="ежа"><g v="sing"/><g v="gent"/></f><f t="ежу"><g v="sing"/><g v="datv"/></f><f t="ежа"><g v="sing"/><g v="accs"/></f><f t="ежом"><g v="sing"/><g v="ablt"/></f><f t="еже"><g v="sing"/><g v="loct"/></f><f t="ежи"><g v="plur"/><g v="nomn"/></f><f t="ежей"><g v="plur"/><g v="gent"/></f><f t="ежам"><g v="plur"/><g v="datv"/></f><f t="ежей"><g v="plur"/><g v="accs"/></f><f t="ежами"><g v="plur"/><g v="ablt"/></f><f t="ежах"><g v="plur"/><g v="loct"/></f></lemma>
+        <lemma id="2" rev="2"><l t="ёж"><g v="NOUN"/><g v="inan"/><g v="masc"/></l><f t="ёж"><g v="sing"/><g v="nomn"/></f><f t="ежа"><g v="sing"/><g v="gent"/></f><f t="ежу"><g v="sing"/><g v="datv"/></f><f t="ёж"><g v="sing"/><g v="accs"/></f><f t="ежом"><g v="sing"/><g v="ablt"/></f><f t="еже"><g v="sing"/><g v="loct"/></f><f t="ежи"><g v="plur"/><g v="nomn"/></f><f t="ежей"><g v="plur"/><g v="gent"/></f><f t="ежам"><g v="plur"/><g v="datv"/></f><f t="ежи"><g v="plur"/><g v="accs"/></f><f t="ежами"><g v="plur"/><g v="ablt"/></f><f t="ежах"><g v="plur"/><g v="loct"/></f></lemma>
+    </lemmata>
+</xml>

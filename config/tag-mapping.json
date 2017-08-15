@@ -57,5 +57,9 @@
     "impr" :	"lexinfo:mood lexinfo:imperative",
     "actv" :	"lexinfo:voice lexinfo:activeVoice",
     "pssv" :	"lexinfo:voice lexinfo:passiveVoice",
-    "Coll" :	"lexinfo:partOfSpeech lexinfo:collectiveNumeral"
+    "Coll" :	"lexinfo:partOfSpeech lexinfo:collectiveNumeral",
+    
+    "Infr" :	"lexinfo:context lexinfo:slangRegister",
+    "Slng" :	"lexinfo:context lexinfo:slangRegister",
+    "Arch" :	"lexinfo:context lexinfo:archaicForm"
 }

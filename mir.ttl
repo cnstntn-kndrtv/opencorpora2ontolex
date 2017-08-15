@@ -1,0 +1,121 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix : <http://kloud.one/ontorugrammaform#> .
+@base <http://kloud.one/ontorugrammaform> .
+
+# Author: Constantin Kondratev
+# Created: 23.03.2017
+# Description: Morphosyntactic properties of russian words
+
+<http://kloud.one/russaffonto> a owl:Ontology ;
+                                owl:versionIRI <http://kloud.one/russaffonto/1.0.0> ;
+                                dc:date "23-03-2017" ;
+                                rdfs:label "OntoRuGrammaForm"@en ;
+                                rdfs:title "Онтологический словарь грамматических форм русского языка"@ru ,
+                                            "Ontology-based dictionary of russian grammatical forms"@en .
+
+# Individuals
+
+# :160807_mir мир
+:160807_mir a ontolex:Word ;
+    ontolex:canonicalForm :160807_mir:lemma ;
+    ontolex:otherForm :160807_mir:form1_mir, 
+                        :160807_mir:form2_mira, 
+                        :160807_mir:form3_miru, 
+                        :160807_mir:form4_mir, 
+                        :160807_mir:form5_mirom, 
+                        :160807_mir:form6_mire, 
+                        :160807_mir:form7_miry, 
+                        :160807_mir:form8_mirov, 
+                        :160807_mir:form9_miram, 
+                        :160807_mir:form10_miry, 
+                        :160807_mir:form11_mirami, 
+                        :160807_mir:form12_mirah, 
+                        :160807_mir:form13_miru, 
+                        :160807_mir:form14_miru .
+# :160807_mir мир Lemma
+:160807_mir:lemma
+    ontolex:writtenRep "мир"@ru ;
+    ontolex:phoneticRep "mʲir"@ru-fonipa ;
+    lexinfo:partOfSpeech lexinfo:noun ;
+    lexinfo:animacy lexinfo:inanimate ;
+    lexinfo:gender lexinfo:masculine .
+# :160807_mir мир Forms
+:160807_mir:form1_mir
+    ontolex:phoneticRep "mʲir"@ru-fonipa ;
+    ontolex:writtenRep "мир"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:nominativeCase .
+
+:160807_mir:form2_mira
+    ontolex:phoneticRep "ˈmʲirə"@ru-fonipa ;
+    ontolex:writtenRep "мира"@ru ; 
+    lexinfo:number lexinfo:singular ;
+     .
+
+:160807_mir:form3_miru
+    ontolex:writtenRep "миру"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:dativeCase .
+
+:160807_mir:form4_mir
+    ontolex:phoneticRep "mʲir"@ru-fonipa ;
+    ontolex:writtenRep "мир"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:accusativeCase .
+
+:160807_mir:form5_mirom
+    ontolex:phoneticRep "ˈmʲirəm"@ru-fonipa ;
+    ontolex:writtenRep "миром"@ru ; 
+    lexinfo:number lexinfo:singular ;
+    lexinfo:case lexinfo:instrumentalCase .
+
+:160807_mir:form6_mire
+    ontolex:writtenRep "мире"@ru ; 
+    lexinfo:number lexinfo:singular ;
+     .
+
+:160807_mir:form7_miry
+    ontolex:writtenRep "миры"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:nominativeCase .
+
+:160807_mir:form8_mirov
+    ontolex:writtenRep "миров"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:genitiveCase .
+
+:160807_mir:form9_miram
+    ontolex:writtenRep "мирам"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:dativeCase .
+
+:160807_mir:form10_miry
+    ontolex:writtenRep "миры"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:accusativeCase .
+
+:160807_mir:form11_mirami
+    ontolex:writtenRep "мирами"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:instrumentalCase .
+
+:160807_mir:form12_mirah
+    ontolex:writtenRep "мирах"@ru ; 
+    lexinfo:number lexinfo:plural ;
+    lexinfo:case lexinfo:locativeCase .
+
+:160807_mir:form13_miru
+    ontolex:writtenRep "миру"@ru ; 
+    lexinfo:number lexinfo:singular ;
+     .
+
+:160807_mir:form14_miru
+    ontolex:writtenRep "миру"@ru ; 
+    lexinfo:number lexinfo:singular ;
+     .

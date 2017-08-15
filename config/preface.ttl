@@ -5,15 +5,15 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix : <http://kloud.one/ontorugrammaform#> .
-@base <http://kloud.one/ontorugrammaform> .
+@prefix : <http://ldf.kloud.one/ontorugrammaform#> .
+@base <http://ldf.kloud.one/ontorugrammaform> .
 
 # Author: Constantin Kondratev
 # Created: 23.03.2017
 # Description: Morphosyntactic properties of russian words
 
 <http://kloud.one/russaffonto> a owl:Ontology ;
-                                owl:versionIRI <http://kloud.one/russaffonto/1.0.0> ;
+                                owl:versionIRI <http://ldf.kloud.one/russaffonto/1.0.0> ;
                                 dc:date "23-03-2017" ;
                                 rdfs:label "OntoRuGrammaForm"@en ;
                                 rdfs:title "Онтологический словарь грамматических форм русского языка"@ru ,

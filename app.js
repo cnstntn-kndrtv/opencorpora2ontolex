@@ -177,7 +177,7 @@ function convert(line, output) {
             id = ':' + id + '_' + transliterate(lemmaWrittenRep);
             
             // Lemma
-            // :1_yozh:lemma
+            // :1_yozh:lemma a ontolex:Form ;
             //     ontolex:writtenRep "ёж"@ru ;
             //     # props
             //     lexinfo:partOfSpeech lexinfo:noun ;
@@ -194,12 +194,12 @@ function convert(line, output) {
             lemmaId = `${id}:lemma`;
             lemma = `# ${id} ${lemmaWrittenRep} Lemma` +
                     '\n' +
-                    `${lemmaId}` +
+                    `${lemmaId} a ontolex:Form ;` +
                     `${newLineIndent}ontolex:writtenRep "${lemmaWrittenRep}"@ru ;` +
                     `${newLineIndent}${lemmaProps} .`
 
             // Forms
-            // :1_yozh:form1_yozh
+            // :1_yozh:form1_yozh a ontolex:Form ;
             //     ontolex:writtenRep "ёж"@ru ;
             //     #props
             //     lexinfo:number lexinfo:singular ;
@@ -234,7 +234,7 @@ function convert(line, output) {
                 formIdsList += formId + lineEnd;
                 
                 formStr = '\n' +
-                        `${formId}` +
+                        `${formId} a ontolex:Form ;` +
                         `${newLineIndent}ontolex:writtenRep "${formWrittenRep}"@ru `;
                 if (formProps.length != 0) formStr += `; ${newLineIndent}${formProps} .\n`;
                 else formStr += '.';
@@ -273,7 +273,7 @@ function convert(line, output) {
 }    
 
 let counter = 0;
-let spinChars = ['🚦', '🚥']
+let spinChars = ['🚦', '🚥'];
 let spinNextIndex = 0;
 function spinner() {
     singleLineConsoleLog(spinChars[spinNextIndex++], ++counter);

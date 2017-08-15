@@ -1,0 +1,6 @@
+<xml>
+    <lemmata>
+        <lemma id="208278" rev="208278"><l t="оптик"><g v="NOUN"/><g v="anim"/><g v="masc"/></l><f t="оптик"><g v="sing"/><g v="nomn"/></f><f t="оптика"><g v="sing"/><g v="gent"/></f><f t="оптику"><g v="sing"/><g v="datv"/></f><f t="оптика"><g v="sing"/><g v="accs"/></f><f t="оптиком"><g v="sing"/><g v="ablt"/></f><f t="оптике"><g v="sing"/><g v="loct"/></f><f t="оптики"><g v="plur"/><g v="nomn"/></f><f t="оптиков"><g v="plur"/><g v="gent"/></f><f t="оптикам"><g v="plur"/><g v="datv"/></f><f t="оптиков"><g v="plur"/><g v="accs"/></f><f t="оптиками"><g v="plur"/><g v="ablt"/></f><f t="оптиках"><g v="plur"/><g v="loct"/></f></lemma>
+        <lemma id="208279" rev="208279"><l t="оптика"><g v="NOUN"/><g v="inan"/><g v="femn"/></l><f t="оптика"><g v="sing"/><g v="nomn"/></f><f t="оптики"><g v="sing"/><g v="gent"/></f><f t="оптике"><g v="sing"/><g v="datv"/></f><f t="оптику"><g v="sing"/><g v="accs"/></f><f t="оптикой"><g v="sing"/><g v="ablt"/></f><f t="оптикою"><g v="sing"/><g v="ablt"/><g v="V-oy"/></f><f t="оптике"><g v="sing"/><g v="loct"/></f><f t="оптики"><g v="plur"/><g v="nomn"/></f><f t="оптик"><g v="plur"/><g v="gent"/></f><f t="оптикам"><g v="plur"/><g v="datv"/></f><f t="оптики"><g v="plur"/><g v="accs"/></f><f t="оптиками"><g v="plur"/><g v="ablt"/></f><f t="оптиках"><g v="plur"/><g v="loct"/></f></lemma>
+    </lemmata>
+</xml>
