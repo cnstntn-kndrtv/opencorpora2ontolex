@@ -12,8 +12,8 @@
 # Created: 23.03.2017
 # Description: Morphosyntactic properties of russian words
 
-<http://kloud.one/russaffonto> a owl:Ontology ;
-                                owl:versionIRI <http://ldf.kloud.one/russaffonto/1.0.0> ;
+<http://ldf.kloud.one/ontorugrammaform> a owl:Ontology ;
+                                owl:versionIRI <http://ldf.kloud.one/ontorugrammaform/1.0.0> ;
                                 dc:date "23-03-2017" ;
                                 rdfs:label "OntoRuGrammaForm"@en ;
                                 rdfs:title "Онтологический словарь грамматических форм русского языка"@ru ,
